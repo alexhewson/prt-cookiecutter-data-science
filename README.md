@@ -33,7 +33,7 @@ The directory structure of your new project looks like this:
 ```
 ├── LICENSE
 ├── Makefile           <- Makefile with commands like `make create_environment`, 
-                          `make update_environment or `make data`.
+│                         `make update_environment or `make data`.
 ├── README.md          <- The top-level README for developers using this project.
 ├── data
 │   ├── interim        <- Intermediate data that has been transformed.
@@ -41,7 +41,7 @@ The directory structure of your new project looks like this:
 │   └── raw            <- The original, immutable data dump.
 │
 ├── docs               <- A default Sphinx project for adding documentation to this project; 
-                          see sphinx-doc.org for details.
+│                         see sphinx-doc.org for details.
 │
 ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
 │                         the creator's initials, and a short `-` delimited description, e.g.
@@ -75,7 +75,7 @@ This project is currently in development and borrows heavily on the excellent wo
 
 As such, this project is primarily focused on adapting the project to suit our own organisational needs and isn't actively seeking contributions from outside of the organisation.
 
-If you would like to find out more about the DrivenData cookiecutter-data-science template and how to contribute to their project then [See their docs for guidelines](https://drivendata.github.io/cookiecutter-data-science/#contributing).
+If you would like to find out more about the DrivenData cookiecutter-data-science template and how to contribute to their project then [see their docs for guidelines](https://drivendata.github.io/cookiecutter-data-science/#contributing).
 
 <!-- ### Installing development requirements
 ------------
