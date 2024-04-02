@@ -1,11 +1,34 @@
 site_name: Prison Reform Trust Cookiecutter Data Science
 site_description: A project template and directory structure for Prison Reform Trust Python data projects.
-site_favicon: favicon.ico
 repo_url: https://github.com/Prison-Reform-Trust/prt-cookiecutter-data-science
 edit_uri: edit/master/docs/docs
 copyright: Prison Reform Trust, with this project heavily indebted to the friendly folks at <a target=_blanks href="https://www.drivendata.org">DrivenData</a>.
-theme: cinder
+theme:
+  name: material
+  logo: assets/logo.svg
+  favicon: assets/favicon.ico
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+        
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: prison-reform-trust
+      toggle:
+        icon: material/weather-night 
+        name: Switch to dark mode
+    
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to system preference
 extra_css:
   - css/extra.css
 nav:
   - Home: index.md
+  - Opinions: opinions.md
