@@ -4,7 +4,16 @@ _A logical, reasonably standardized, but flexible project structure for doing an
 
 ## Getting started
 
-### Requirements to use the cookiecutter template:
+### Setting up a development environment
+
+Before starting your project, your computer needs to be able to interpret all of this code. We have created a separate section which sets out a step-by-step guide to help make this process as straightforward as possible, with information that we have found helpful along the way.
+
+!!! tip
+    If you've never created a Python environment before, or you need a refresher on how we approach this seemingly straightforward task, then this section should be your starting point.
+
+[Setting up a development environment](setting-up-a-development-environment.md)
+
+### Requirements to use the cookiecutter template
 -----------
  - Python 3.5+
  - [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html) >= 1.4.0: We recommend that this is installed with [Conda Python package management](https://docs.conda.io/projects/conda/en/latest/index.html):
