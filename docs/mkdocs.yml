@@ -39,4 +39,5 @@ extra_css:
 nav:
   - Home: index.md
   - Setting up a development environment: setting-up-a-development-environment.md
+  - Starting a new project: starting-a-new-project.md
   - Opinions: opinions.md
