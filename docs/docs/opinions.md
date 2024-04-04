@@ -58,7 +58,7 @@ The first step in reproducing an analysis is always replicating the computationa
 
 Doing so in Python requires choosing and configuring an environment management tool. The ecosystem for this tooling has evolved a lot in recent years. 
 
-For data science work, we prefer to use the **conda** package manager because it also manages non-Python packages, including system library dependencies that you often run into in data science. Our recommended way to install conda is with [Miniconda](https://docs.anaconda.com/free/miniconda/). 
+For data science work, we prefer to use the **conda** package manager because it also manages non-Python packages, including system library dependencies that you often run into in data science. Our recommended way to install conda is with [Miniconda](https://docs.anaconda.com/free/miniconda/) as it is light on resources without all of the bloat of the full-fat Anaconda. Ted Petrou's aka DunderData's [helpful blog](https://medium.com/dunder-data/anaconda-is-bloated-set-up-a-lean-robust-data-science-environment-with-miniconda-and-conda-forge-b48e1ac11646) on this was instructive. 
 
 ## Keep secrets and configuration out of version control
 
