@@ -16,12 +16,7 @@ Before starting your project, your computer needs to be able to interpret all of
 ### Requirements to use the cookiecutter template
 -----------
  - Python 3.5+
- - [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html) >= 1.4.0: We recommend that this is installed with [Conda Python package management](https://docs.conda.io/projects/conda/en/latest/index.html):
-
-``` bash
-$ conda config --add channels conda-forge
-$ conda install cookiecutter
-```
+ - [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html) >= 1.4.0: We recommend that this is installed with [Conda's Miniconda Python package management](https://docs.anaconda.com/free/miniconda/):
 
 ### Starting a new project
 
