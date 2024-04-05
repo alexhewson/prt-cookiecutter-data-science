@@ -7,10 +7,15 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.keys
 theme:
   name: material
   logo: assets/logo.svg
   favicon: assets/favicon.ico
+  features:
+    - navigation.sections
+    - navigation.path
+    - navigation.indexes
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
@@ -37,7 +42,7 @@ theme:
 extra_css:
   - css/extra.css
 nav:
-  - Home: index.md
+  - Welcome: index.md
   - Setting up a development environment: setting-up-a-development-environment.md
   - Starting a new project: starting-a-new-project.md
   - Opinions: opinions.md
