@@ -20,6 +20,7 @@ theme:
     - navigation.sections
     - navigation.path
     - navigation.indexes
+    - content.code.copy
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
@@ -49,4 +50,5 @@ nav:
   - Welcome: index.md
   - Setting up a development environment: setting-up-a-development-environment.md
   - Starting a new project: starting-a-new-project.md
+  - Updating your environment: updating-your-environment.md
   - Opinions: opinions.md
