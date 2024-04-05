@@ -1,11 +1,21 @@
 # Setting up a development environment
 
-This tutorial outlines how you can get up and running managing your Python development environments. Here's what we'll cover:
+This tutorial outlines how you can get up and running managing your Python development environments.
 
-## Install requirements
+## Installation
+
+We recommend that that you install and configure the following to get started:
+
+* Miniconda
+* Git/GitHub
+* Visual Studio Code
+
+Once you have set up your development environment you can move on to [Starting a new project](starting-a-new-project.md).
+
+## Miniconda
+This is a setup step that you only need to do once per machine. After this is done, you shouldn't need to do this step again. Occasionally it may be necessary to update your requirements.
 
 ### Installing Miniconda
-This is a setup step that you only need to do once per machine. After this is done, you shouldn't need to do this step again. Occasionally it may be necessary to update your requirements.
 
 1. [Install Miniconda](https://docs.anaconda.com/free/miniconda/miniconda-install/): if you don't already have Miniconda, you'll need to install it following the instructions for your platform (MacOS/Windows/Linux)
 2. Open a terminal window
@@ -28,7 +38,7 @@ Then prevent the base Conda environment from automatically activating when you o
 conda config --set auto_activate_base false
 ```
 
-### Installing a base prtdata environment
+### Creating a base prtdata environment
 
 !!! note
     This section is intended to provide a simple step-by-step guide to creating your development environment. If you want to find out more about managing Conda environments, visit the [Conda docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
@@ -98,3 +108,41 @@ git config --global user.email
 !!! tip
     Git and GitHub can seem a bit intimidating at first, but remember it's just a way of tracking changes and providing effective version control. Check out [XXXXXX] for a separate guide on our preferred GitHub workflow, as well as the extensive docs from both [Git](https://git-scm.com/doc) and [GitHub](https://docs.github.com/en).
 
+## Visual Studio Code
+[Visual Studio Code](https://code.visualstudio.com/) aka VS Code is a free and open source integrated development environment (IDE) from Microsoft that is available on all major operating systems.
+
+Just like Python itself, VS Code can be extended with packages, and it is those packages, called extensions in this case, that make it so useful. As well as Python, VS Code supports a ton of other languages.
+
+There are other IDEs available, but VS Code brings a lot of features together in one app, including Jupyter Notebooks, Git version control, code linting, debugging, and much more. Use it, then try [Spyder](https://www.spyder-ide.org/), you'll thank us later.
+
+### Installing VS Code
+No need to dwell on this one. Go to the [VS Code website](https://code.visualstudio.com/) and follow the instructions.
+
+### Extensions in VS Code
+Once you have VS Code installed and opened, navigate to the ‘extensions’ tab on the left hand side vertical bar of icons (it’s the one that looks like 4 boxes). You’ll need to install the Python extension, which you can search for by using the text box within VS Code’s extensions panel.
+
+There are some other extensions it’s useful to have and install (if they aren’t already):
+
+| Extension | Function |
+|---|---|
+| Jupyter | Adds Jupyter notebook support |
+| Pylance | Adds Python IntelliSense type checking |
+| indent-rainbow | Makes code indentation easier to read |
+| GitHub Repositories | Remotely browse and edit any GitHub repository |
+| Path Intellisense | Adds filename autocompletion |
+| Black Formatter | Adds formatting support for Python files using the [ Black ]( https://black.readthedocs.io/en/stable/index.html ) formatter. |
+| Rainbow CSV | Rainbow CSV - Highlights columns in comma (.csv) files and more |
+| YAML | Adds comprehensive YAML Language support (useful for environment.yml files) |
+| vscode-icons | Adds icons to VS code file explorer, making it easier to find the file you want |
+| Shebang Snippets | Insert "shebang" lines automatically |
+
+### Hello world!
+
+Whilst a full tutorial on how to use VS Code is outside of the scope of this guide, VS Code's [Getting Started tutorial](https://code.visualstudio.com/docs/python/python-tutorial) is a good place to learn more.
+
+!!! warning
+    As you have already installed Miniconda, you can ignore the first steps on installing a Python interpreter. There's also no need to create a virtual environment, as you've already created your `prtdata` conda environment. Open the Command Palette (⇧⌘P), start typing the **Python: Select Interpreter** command and select the `(prtdata)` environment from the list.
+
+## You're ready
+
+If you've made it this far then congratulations! You are now ready to start your journey as a developer and move on to the next stage — [Starting a new project]()
