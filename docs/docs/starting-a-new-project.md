@@ -114,7 +114,7 @@ To see what's in your Conda environment, open up the `environment.yml` file. In 
 
 You might notice that the output that was returned when you ran `conda list` in your Jupyter Notebook was quite a bit longer than the number of packages listed in the `environment.yml`. That's because there were other dependencies that had to be installed to make the packages in `environment.yml` run.
 
-**[Need to include a reference to lockfiles here once implemented]**
+# TODO #1 include a reference to lockfiles here once implemented
 
 We like to think of these two files are representing two different perspectives:
 
