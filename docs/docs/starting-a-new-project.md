@@ -88,7 +88,7 @@ One small downside is that the full filepath to the environment might take up a 
 Whilst the vast majority of your development will take place using VS Code, if this is bothering you, then run the following command and a shortened version will be set:
 
 ```bash
-conda config --set env_prompt '({name})'
+`conda config --set env_prompt '({name})'`
 (envs) $
 ```
 Let the coding begin!
