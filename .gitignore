@@ -9,3 +9,6 @@ envs/
 .cache/*
 tests/__pycache__/*
 *.pytest_cache/
+
+# Conda environment
+envs/
