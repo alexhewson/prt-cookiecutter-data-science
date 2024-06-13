@@ -63,17 +63,19 @@ Now that you've got your project, you're ready to go! You should do the followin
 │                         generated with `conda list --export > requirements.txt`
 │
 ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
-└── src                <- Source code for use in this project.
-    ├── __init__.py    <- Makes src a Python module
-    │
-    ├── data           <- Scripts to download or generate data
-    │   └── make_dataset.py
-    │
-    ├── analysis        <- Scripts to process raw data for analysis
-    │   └── process_data.py
-    │
-    └── visualization  <- Scripts to create exploratory and results oriented visualizations
-        └── visualize.py
+├── src                <- Source code for use in this project.
+│   ├── __init__.py    <- Makes src a Python module
+│   │
+│   ├── analysis       <- Scripts to process raw data for analysis
+│   │   └── process_data.py
+│   │
+│   ├── data           <- Scripts to download or generate data
+│   │   └── make_dataset.py
+│   │
+│   └── visualization  <- Scripts to create exploratory and results oriented visualizations
+│       └── visualize.py
+│
+└── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
 ```
 
 
