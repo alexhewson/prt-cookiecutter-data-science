@@ -76,7 +76,7 @@ Now that you've got your project, you're ready to go! You should do the followin
 │       └── visualize.py
 │
 └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
-
+```
 
 ## Contributing
 
