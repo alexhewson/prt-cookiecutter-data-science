@@ -145,4 +145,4 @@ Whilst a full tutorial on how to use VS Code is outside of the scope of this gui
 
 ## You're ready
 
-If you've made it this far then congratulations! You are now ready to start your journey as a developer and move on to the next stage — [Starting a new project]()
+If you've made it this far then congratulations! You are now ready to start your journey as a developer and move on to the next stage — [Starting a new project](starting-a-new-project.md)
