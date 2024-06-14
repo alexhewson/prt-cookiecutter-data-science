@@ -64,6 +64,7 @@ conda activate prtdata
 ```bash
 conda env create --prefix ./envs -f environment.yml
 ```
+# TODO #6 Add default environment.yml to Cookiecutter repo
 
 This command reads the `environment.yml` file within your project directory and builds a new development environment called `./envs` within that directory. As Conda sets out in their docs:
 
