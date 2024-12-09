@@ -1,0 +1,13 @@
+docs/site/
+easydata.wiki/
+
+# OSX Junk
+.DS_Store
+
+# test cache
+.cache/*
+tests/__pycache__/*
+*.pytest_cache/
+
+# Conda environment
+envs/
