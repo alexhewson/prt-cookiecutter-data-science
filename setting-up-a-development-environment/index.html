@@ -1,0 +1,950 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A project template and directory structure for Prison Reform Trust Python data projects.">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../starting-a-new-project/">
+      
+      
+      <link rel="icon" href="../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+    
+    
+      
+        <title>Setting up a development environment - Prison Reform Trust Cookiecutter Data Science</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+  
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v12a2 2 0 0 0 2 2h4l4 4 4-4h4c1.11 0 2-.89 2-2V4a2 2 0 0 0-2-2m0 14h-4.83L12 19.17 8.83 16H4V4h16zm-9.25-2.29-3.5-3.5 1.41-1.42 2.09 2.09 4.59-4.58 1.41 1.41z"/></svg>');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#setting-up-a-development-environment" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Prison Reform Trust Cookiecutter Data Science" class="md-header__button md-logo" aria-label="Prison Reform Trust Cookiecutter Data Science" data-md-component="logo">
+      
+  <img src="../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Prison Reform Trust Cookiecutter Data Science
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Setting up a development environment
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="prison-reform-trust" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/alexhewson/prt-cookiecutter-data-science" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Prison Reform Trust Cookiecutter Data Science" class="md-nav__button md-logo" aria-label="Prison Reform Trust Cookiecutter Data Science" data-md-component="logo">
+      
+  <img src="../assets/logo.svg" alt="logo">
+
+    </a>
+    Prison Reform Trust Cookiecutter Data Science
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/alexhewson/prt-cookiecutter-data-science" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Setting up a development environment
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Setting up a development environment
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miniconda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Miniconda
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Miniconda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-miniconda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Miniconda
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-miniconda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Miniconda
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-base-prtdata-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a base prtdata environment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-and-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Git and GitHub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Git and GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Git
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Git
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-studio-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual Studio Code
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visual Studio Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-vs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing VS Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extensions-in-vs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extensions in VS Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hello-world" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hello world!
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#youre-ready" class="md-nav__link">
+    <span class="md-ellipsis">
+      You're ready
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../starting-a-new-project/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Starting a new project
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../updating-your-environment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Updating your environment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../opinions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Opinions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miniconda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Miniconda
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Miniconda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-miniconda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Miniconda
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-miniconda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Miniconda
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-base-prtdata-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a base prtdata environment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-and-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Git and GitHub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Git and GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Git
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Git
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-studio-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual Studio Code
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visual Studio Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-vs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing VS Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extensions-in-vs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extensions in VS Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hello-world" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hello world!
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#youre-ready" class="md-nav__link">
+    <span class="md-ellipsis">
+      You're ready
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="setting-up-a-development-environment">Setting up a development environment</h1>
+<p>This tutorial outlines how you can get up and running managing your Python development environments.</p>
+<h2 id="installation">Installation</h2>
+<p>We recommend that that you install and configure the following to get started:</p>
+<ul>
+<li>Miniconda</li>
+<li>Git/GitHub</li>
+<li>Visual Studio Code</li>
+</ul>
+<p>Once you have set up your development environment you can move on to <a href="../starting-a-new-project/">Starting a new project</a>.</p>
+<h2 id="miniconda">Miniconda</h2>
+<p>This is a setup step that you only need to do once per machine. After this is done, you shouldn't need to do this step again. Occasionally it may be necessary to update your requirements.</p>
+<h3 id="installing-miniconda">Installing Miniconda</h3>
+<ol>
+<li><a href="https://docs.anaconda.com/free/miniconda/miniconda-install/">Install Miniconda</a>: if you don't already have Miniconda, you'll need to install it following the instructions for your platform (MacOS/Windows/Linux)</li>
+<li>Open a terminal window</li>
+<li>
+<p>To verify that conda is installed, in your terminal window, run:
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>--version
+</code></pre></div>
+    Conda responds with the version number that you have installed, such as <code>conda 24.1.2</code>.</p>
+<p>If you get an error message, check the <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-conda.html">Anaconda website</a> for advice on suggestions on how to resolve.</p>
+</li>
+</ol>
+<h3 id="configuring-miniconda">Configuring Miniconda</h3>
+<p>Set your channel priority to strict by entering in the terminal:
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>channel_priority<span class="w"> </span>strict
+</code></pre></div>
+Then prevent the base Conda environment from automatically activating when you open a terminal window:
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>auto_activate_base<span class="w"> </span><span class="nb">false</span>
+</code></pre></div></p>
+<h3 id="creating-a-base-prtdata-environment">Creating a base prtdata environment</h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section is intended to provide a simple step-by-step guide to creating your development environment. If you want to find out more about managing Conda environments, visit the <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">Conda docs</a>.</p>
+</div>
+<p>Create your base prtdata environment with the following requirements:
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>prtdata<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span><span class="w"> </span>cookiecutter<span class="w"> </span>make
+</code></pre></div>
+You've now created a new conda environment named <code>prtdata</code> that you'll use to create all PRT cookiecutter projects. Once this environment has been created, you won't need to create it again.</p>
+<p>You can now activate your new environment using the following command:
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>activate<span class="w"> </span>prtdata
+</code></pre></div>
+By default, the active environment---the one you are currently using---is shown in parentheses ( ) or brackets [ ] at the beginning of your command prompt:
+<div class="highlight"><pre><span></span><code><span class="o">(</span>prtdata<span class="o">)</span><span class="w"> </span>$
+</code></pre></div>
+To deactivate your environment enter:
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>deactivate<span class="w"> </span>prtdata
+</code></pre></div></p>
+<h2 id="git-and-github">Git and GitHub</h2>
+<p>Building projects is one of the core parts of being a developer. And Git and GitHub are essential tools you'll use when building projects with others.</p>
+<p>Having a way to document or track your code helps to make your work organised, and lets you keep track of the changes you've made at different stages. This is what <a href="https://git-scm.com/">Git</a> lets you do.</p>
+<p>But what if you're working with other developers or if you work in different locations with different computers, such as at work or at home? This is where <a href="https://github.com/">GitHub</a> comes in.</p>
+<p>GitHub provides you with a place to host your code. This makes controlling each version of your project easier and faster, and enables developers to collaborate.</p>
+<p><strong>When you're using GitHub, you're working with Git beneath the hood.</strong></p>
+<h3 id="installing-git">Installing Git</h3>
+<p>Git generally comes pre-installed on MacOS and Linux-based systems, but you can always check if you have Git installed in your machine by typing <code>git version</code> in your terminal.</p>
+<p>Similar to when you checked your Conda installation above, you should receive a response, such as <code>git version 2.28.0</code>. If you don't have Git installed in your computer, you won't get a version.</p>
+<ol>
+<li><a href="https://git-scm.com/download">Install Git</a>: if you don't already have Git, you'll need to install it following the instructions for your platform (MacOS/Windows/Linux)</li>
+<li>Open terminal and type <code>git version</code> to verify that Git was successfully installed.</li>
+</ol>
+<h3 id="configuring-git">Configuring Git</h3>
+<ol>
+<li>Set your Git username
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Mona Lisa&quot;</span>
+</code></pre></div></li>
+<li>Set your Git email address
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;YOUR_EMAIL&quot;</span>
+</code></pre></div></li>
+<li>Confirm that you have set these correctly in Git:
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name
+&gt;<span class="w"> </span>Mona<span class="w"> </span>Lisa
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email
+&gt;<span class="w"> </span>YOUR_EMAIL
+</code></pre></div></li>
+</ol>
+<h3 id="github">GitHub</h3>
+<ol>
+<li><a href="https://github.com/">Create a GitHub account</a> and follow the prompts.</li>
+<li><a href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/verifying-your-email-address">Verify your email address</a>. You should receive an email to the address you signed up with at GitHub.</li>
+<li>Check your GitHub account is working by logging on and taking a look around.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Git and GitHub can seem a bit intimidating at first, but remember it's just a way of tracking changes and providing effective version control. Check out [XXXXXX] for a separate guide on our preferred GitHub workflow, as well as the extensive docs from both <a href="https://git-scm.com/doc">Git</a> and <a href="https://docs.github.com/en">GitHub</a>.</p>
+</div>
+<h2 id="visual-studio-code">Visual Studio Code</h2>
+<p><a href="https://code.visualstudio.com/">Visual Studio Code</a> aka VS Code is a free and open source integrated development environment (IDE) from Microsoft that is available on all major operating systems.</p>
+<p>Just like Python itself, VS Code can be extended with packages, and it is those packages, called extensions in this case, that make it so useful. As well as Python, VS Code supports a ton of other languages.</p>
+<p>There are other IDEs available, but VS Code brings a lot of features together in one app, including Jupyter Notebooks, Git version control, code linting, debugging, and much more. Use it, then try <a href="https://www.spyder-ide.org/">Spyder</a>, you'll thank us later.</p>
+<h3 id="installing-vs-code">Installing VS Code</h3>
+<p>No need to dwell on this one. Go to the <a href="https://code.visualstudio.com/">VS Code website</a> and follow the instructions.</p>
+<h3 id="extensions-in-vs-code">Extensions in VS Code</h3>
+<p>Once you have VS Code installed and opened, navigate to the ‘extensions’ tab on the left hand side vertical bar of icons (it’s the one that looks like 4 boxes). You’ll need to install the Python extension, which you can search for by using the text box within VS Code’s extensions panel.</p>
+<p>There are some other extensions it’s useful to have and install (if they aren’t already):</p>
+<table>
+<thead>
+<tr>
+<th>Extension</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jupyter</td>
+<td>Adds Jupyter notebook support</td>
+</tr>
+<tr>
+<td>Pylance</td>
+<td>Adds Python IntelliSense type checking</td>
+</tr>
+<tr>
+<td>indent-rainbow</td>
+<td>Makes code indentation easier to read</td>
+</tr>
+<tr>
+<td>GitHub Repositories</td>
+<td>Remotely browse and edit any GitHub repository</td>
+</tr>
+<tr>
+<td>Path Intellisense</td>
+<td>Adds filename autocompletion</td>
+</tr>
+<tr>
+<td>Black Formatter</td>
+<td>Adds formatting support for Python files using the <a href="https://black.readthedocs.io/en/stable/index.html"> Black </a> formatter.</td>
+</tr>
+<tr>
+<td>Rainbow CSV</td>
+<td>Rainbow CSV - Highlights columns in comma (.csv) files and more</td>
+</tr>
+<tr>
+<td>YAML</td>
+<td>Adds comprehensive YAML Language support (useful for environment.yml files)</td>
+</tr>
+<tr>
+<td>vscode-icons</td>
+<td>Adds icons to VS code file explorer, making it easier to find the file you want</td>
+</tr>
+<tr>
+<td>Shebang Snippets</td>
+<td>Insert "shebang" lines automatically</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hello-world">Hello world!</h3>
+<p>Whilst a full tutorial on how to use VS Code is outside of the scope of this guide, VS Code's <a href="https://code.visualstudio.com/docs/python/python-tutorial">Getting Started tutorial</a> is a good place to learn more.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>As you have already installed Miniconda, you can ignore the first steps on installing a Python interpreter. There's also no need to create a virtual environment, as you've already created your <code>prtdata</code> conda environment. Open the Command Palette (⇧⌘P), start typing the <strong>Python: Select Interpreter</strong> command and select the <code>(prtdata)</code> environment from the list.</p>
+</div>
+<h2 id="youre-ready">You're ready</h2>
+<p>If you've made it this far then congratulations! You are now ready to start your journey as a developer and move on to the next stage — <a href="../starting-a-new-project/">Starting a new project</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Written by Prison Reform Trust. This project is heavily indebted to <a target=_blanks href="https://www.drivendata.org">DrivenData</a> and <a target=_blanks href="https://github.com/hackalog/easydata">EasyData</a>.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.path", "navigation.indexes", "content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
