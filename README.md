@@ -63,6 +63,7 @@ Now that you've got your project, you're ready to go! You should do the followin
 │                         generated with `conda list --export > requirements.txt`
 │
 ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
+|
 ├── src                <- Source code for use in this project.
 │   ├── __init__.py    <- Makes src a Python module
 │   │
@@ -86,7 +87,6 @@ As such, this project is primarily focused on adapting the project to suit our o
 
 If you would like to find out more about the DrivenData cookiecutter-data-science template and how to contribute to their project then [see their docs for guidelines](https://drivendata.github.io/cookiecutter-data-science/#contributing).
 
-
 ## Links to related projects and references
 
 Here are some projects and blog posts that have provided a huge amount of information and guidance to inform this cookiecutter template and which you may find useful.
@@ -95,5 +95,6 @@ Here are some projects and blog posts that have provided a huge amount of inform
  - [EasyData](https://github.com/hackalog/easydata/wiki) - A revised implementation of the CCDS template and which triggered the development of this project.
  - [Coding for Economists](https://aeturrell.github.io/coding-for-economists) - An excellent blog by [Arthur Turrell](https://aeturrell.com/) covering a wide range of topics, from getting your development environment started to suggested workflows; data transformation; designing reproducible analysis and much, much more.
  - [Government Analysis Function guidance aka The Duck Book](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html) - Another great guidance doc to draw from, which govers guiding principles; modular coding; documentation; version control and loads more.
+
 
 Finally, a huge thanks to the [Cookiecutter](https://cookiecutter.readthedocs.org/en/latest/) project ([github](https://github.com/audreyr/cookiecutter)), which is helping us all spend less time thinking about and writing boilerplate and more time getting things done.
