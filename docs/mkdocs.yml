@@ -1,7 +1,7 @@
 site_name: Prison Reform Trust Cookiecutter Data Science
 site_description: A project template and directory structure for Prison Reform Trust Python data projects.
-repo_url: https://github.com/Prison-Reform-Trust/prt-cookiecutter-data-science
-edit_uri: edit/master/docs/docs
+repo_url: https://github.com/alexhewson/prt-cookiecutter-data-science
+edit_uri: edit/master/docs/
 copyright: Written by Prison Reform Trust. This project is heavily indebted to <a target=_blanks href="https://www.drivendata.org">DrivenData</a> and <a target=_blanks href="https://github.com/hackalog/easydata">EasyData</a>.
 markdown_extensions:
   - admonition
