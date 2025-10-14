@@ -9,26 +9,29 @@ We've already created a development environment and now you realise that there's
 Your `environment.yml` file will look something like this:
 ```yaml
 channels:
-  - defaults
   - conda-forge
-dependencies:
-  - notebook
-  - cookiecutter
-  - black
-  - jupyterlab
-  - lxml
-  - matplotlib
-  - odfpy
-  - poppler
-  - python-dotenv
-  - seaborn
+  - defaults
   - plotly
-  - nbqa
-  - pandas
-  - python-kaleido
+dependencies:
+  - black
   - chart-studio
-  - ipywidgets
+  - cookiecutter
+  - jupyterlab
+  - matplotlib
+  - mkdocs-material
+  - nbautoexport
+  - nbqa
+  - notebook
+  - pandas
+  - plotly
   - plotly::plotly-geo
+  - poppler
+  - python
+  - python-dotenv
+  - python-kaleido
+  - requests
+  - seaborn
+  - xlrd
 ...
 ```
 To add any package available from conda, add it to the end of the list and save.
