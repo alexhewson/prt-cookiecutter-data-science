@@ -1,0 +1,24 @@
+channels:
+  - conda-forge
+  - defaults
+  - plotly
+dependencies:
+  - black
+  - chart-studio
+  - cookiecutter
+  - jupyterlab
+  - matplotlib
+  - mkdocs-material
+  - nbautoexport
+  - nbqa
+  - notebook
+  - pandas
+  - plotly
+  - plotly::plotly-geo
+  - poppler
+  - python
+  - python-dotenv
+  - python-kaleido
+  - requests
+  - seaborn
+  - xlrd
