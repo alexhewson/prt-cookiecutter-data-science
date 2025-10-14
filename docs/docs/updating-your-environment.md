@@ -63,4 +63,21 @@ git checkout main
 git fetch origin
 git merge origin/main
 ```
-The local `main` branch will now have the updated `environment.yml`. While it seems a bit roundabout here, we recommend always using GitHub PRs to keep track of changes. This allows for the adoption of a [multi-user workflow using an `upstream`](https://github.com/hackalog/easydata/wiki/GitHub-%28GitLab%29-Workflow-Cheat-Sheet) seamlessly. 
+The local `main` branch will now have the updated `environment.yml`. While it seems a bit roundabout here, we recommend always using GitHub PRs to keep track of changes. This allows for the adoption of a [multi-user workflow using an `upstream`](https://github.com/hackalog/easydata/wiki/GitHub-%28GitLab%29-Workflow-Cheat-Sheet) seamlessly.
+
+## If all else fails
+
+Whilst using this method should avoid running into the problem of package conflicts, if you really mess up your environment, you can always easily delete it and start again.
+
+Ensure that the terminal path is in the root of your project directory, then run:
+
+```bash
+conda deactivate
+conda env remove --prefix ./envs
+```
+Then rebuild it from the `environment.yml` file:
+```bash
+conda activate prtdata
+conda env create --prefix ./envs -f environment.yml
+```
+This will delete the existing environment and create a new one from the `environment.yml` file.
