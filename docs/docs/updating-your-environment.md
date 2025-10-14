@@ -38,16 +38,26 @@ To add any package available from conda, add it to the end of the list and save.
 
 Once you've made your edits, run `conda env update` in the terminal and voila, you're updated.
 
+## Conda-forge
+[conda-forge](https://conda-forge.org/docs/user/introduction/) is a community effort that provides conda packages for a wide range of software.
+
+Whilst the packaging team from Anaconda, Inc. provides a multitude of packages on their defaults channel, not all packages are available there. This meant that users had to install packages from multiple channels, which could lead to dependency conflicts. Conda-forge was created to solve this problem by providing a single channel that contains a wide range of up-to-date packages.
+
+We recommend using conda-forge as your primary channel for packages. This is why it is listed first in the `channels` section of the `environment.yml` file.
+
 ## Checking your updates back into the project repo
 To share your updated environment, check in your `environment.yml` file so others can use it. We'll follow the [EasyData git workflow](https://github.com/hackalog/easydata/blob/master/%7B%7B%20cookiecutter.repo_name%20%7D%7D/reference/easydata/git-workflow.md)
 
+!!! note
+    All of the steps below can be completed from within VS Code's Source Control (:octicons-git-branch-24:) panel if you prefer to avoid the command line.
+
 1. Checkout a new branch: `git checkout -b update-environment`
-1. Stage the changes: `git add -p environment.yml` and include the desired changes, discarding the rest
-1. Commit the changes: `git commit -m "update the environment file"
-1. Push to your origin: `git push origin update-environment`
-1. [Create a pull request (PR) to the main branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
-1. Merge this PR: If you look at the PR, the only changes should be to the `environment.yml` file. If all looks well, merge this PR.
-1. Incorporate changes back into your local setup: 
+2. Stage the changes: `git add -p environment.yml` and include the desired changes, discarding the rest
+3. Commit the changes: `git commit -m "update the environment file"
+4. Push to your origin: `git push origin update-environment`
+5. [Create a pull request (PR) to the main branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
+6. Merge this PR: If you look at the PR, the only changes should be to the `environment.yml` file. If all looks well, merge this PR.
+7. Incorporate changes back into your local setup: 
 ```bash
 git checkout main
 git fetch origin
