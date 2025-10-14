@@ -39,32 +39,37 @@ One such way that Conda attempts to mitigate against the dreaded:
 ```bash
 > Solving environment: failed 
 ```
-is through the use of `environment.yml` files. These are a simple text file which contains a list of the names of the packages that you want to include in your development environment (dependencies), and may also include the chosen name of that environment and the channels to use to download the dependencies/packages. 
+is through the use of `environment.yml` files. These are a simple text file which contains a list of the names of the packages that you want to include in your development environment (dependencies), and may also include the chosen name of that environment and the channels to use to download the dependencies/packages.
 
-We're not going to get into much more detail on `environment.yml` files, but there's a short primer in [Conda's docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#create-env-file-manually) if you want to find out more..
+A boilerplate `environment.yml` file is located in the root of your project directory. This contains a list of some of the common packages used in data projects at PRT. It is created automatically when you create a new project using the PRT cookiecutter template.
+
+We're not going to get into much more detail on `environment.yml` files, but there's a short primer in [Conda's docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#create-env-file-manually) if you want to find out more.
 
 #### How to build your environment
 
 !!! warning
     If you have not already completed the preceding steps then return to [Create your project/repo](#create-your-projectrepo) and follow the steps back to here.
 
-So you've now created your PRT cookiecutter project and initialised it as a GitHub repo. The next step is to build your development environment. 
+!!! tip
+    A boilerplate `environment.yml` file is already located in the root of your new project directory. This contains a list of some of the common packages used in data projects at PRT. If you already
+    know which packages you want to use in your project, or that certain packages will not be needed, then feel free to edit this file before you build your environment.
+
+So you've now created your PRT cookiecutter project and initialised it as a GitHub repo. The next step is to build your development environment.
 
 1. Open a terminal window in VS Code (Terminal > New Terminal)
 2. Check that the terminal prompt is showing your project's directory 
 ```bash
 <my-repo-name> $ 
 ```
-3. Activate `prtdata`
+1. Activate `prtdata`
 ```bash
 conda activate prtdata
 (prtdata)<my-repo-name> $ 
 ```
-4. Build your project environment by entering the following command:
+1. Build your project environment by entering the following command:
 ```bash
 conda env create --prefix ./envs -f environment.yml
 ```
-# TODO #6 Add default environment.yml to Cookiecutter repo
 
 This command reads the `environment.yml` file within your project directory and builds a new development environment called `./envs` within that directory. As Conda sets out in their docs:
 
@@ -104,8 +109,16 @@ The prt template project `<my-repo-name>` is populated with recommended default 
 4. Select the `envs` environment from within the notebook: Click **Select Kernel > Python Environments > envs (Python 3.XX) `<my-repo-name>`**`/envs/bin/python`. 
 5. Check that it's finding the right environment by entering  `conda list` in a cell and running the cell. The output should include this at the top:
 ```bash
-# packages in environment at <path-to-environment>: 
-
+# packages in environment at <path-to-environment>:
+#
+# Name                    Version                   Build  Channel
+_python_abi3_support      1.0                  hd8ed1ab_2    conda-forge
+annotated-types           0.7.0              pyhd8ed1ab_1    conda-forge
+anyio                     4.11.0             pyhcf101f3_0    conda-forge
+appnope                   0.1.4              pyhd8ed1ab_1    conda-forge
+argon2-cffi               25.1.0             pyhd8ed1ab_0    conda-forge
+argon2-cffi-bindings      25.1.0          py314h6482030_1    conda-forge
+arrow                     1.3.0              pyhd8ed1ab_1    conda-forge
 ...
 ```
     where the `<path-to-environment>` ends in `<my-repo-name>/envs`. 
@@ -114,6 +127,8 @@ The prt template project `<my-repo-name>` is populated with recommended default 
 To see what's in your Conda environment, open up the `environment.yml` file. In it is a list of the packages that are installed in your project's virtual Conda environment.
 
 You might notice that the output that was returned when you ran `conda list` in your Jupyter Notebook was quite a bit longer than the number of packages listed in the `environment.yml`. That's because there were other dependencies that had to be installed to make the packages in `environment.yml` run.
+
+
 
 # TODO #1 include a reference to lockfiles here once implemented
 
