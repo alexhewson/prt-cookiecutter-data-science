@@ -60,7 +60,7 @@ Now that you've got your project, you're ready to go! You should do the followin
 │   └── figures        <- Generated graphics and figures to be used in reporting
 │
 ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `conda list --export > requirements.txt`
+│                         generated with `pip list --format=freeze > requirements.txt`
 │
 ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
 ├── src                <- Source code for use in this project.

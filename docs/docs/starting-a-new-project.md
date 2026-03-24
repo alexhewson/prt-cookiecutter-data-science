@@ -97,6 +97,20 @@ Whilst the vast majority of your development will take place using VS Code, if t
 `conda config --set env_prompt '({name})'`
 (envs) $
 ```
+
+1. Finally, export your environment to `environment.yml`
+
+This will allow you to rebuild your environment on another machine if you need to, and ensure that others who wish you run your code have the same development environment.
+```bash
+conda env export > environment.yml --no-builds
+```
+
+You may also wish to create a `requirements.txt` file to maximise compatibility. This helps users if they are using `pip` and `venv` rather than Conda.
+
+```bash
+pip list --format=freeze > requirements.txt
+```
+
 Let the coding begin!
 
 ## Exploring the default environment
