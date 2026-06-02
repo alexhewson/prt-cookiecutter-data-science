@@ -33,17 +33,17 @@ As we have [previously explained](setting-up-a-development-environment.md#git-an
 
 As we have already set out above, there is a very strong case against having a single monolithic development environment from which you build all of your projects. Whilst no package manager (read Conda) is perfect, there are features that you can make use of to try and avoid what's known as [dependency hell](https://en.wikipedia.org/wiki/Dependency_hell).
 
-#### environment.yml
+#### environment.yaml
 
 One such way that Conda attempts to mitigate against the dreaded:
 ```bash
 > Solving environment: failed 
 ```
-is through the use of `environment.yml` files. These are a simple text file which contains a list of the names of the packages that you want to include in your development environment (dependencies), and may also include the chosen name of that environment and the channels to use to download the dependencies/packages.
+is through the use of `environment.yaml` files. These are a simple text file which contains a list of the names of the packages that you **want** to include in your development environment (dependencies), and may also include the chosen name of that environment and the channels to use to download the dependencies/packages.
 
-A boilerplate `environment.yml` file is located in the root of your project directory. This contains a list of some of the common packages used in data projects at PRT. It is created automatically when you create a new project using the PRT cookiecutter template.
+A boilerplate `environment.yaml` file is located in the root of your project directory. This contains a list of some of the common packages used in data projects at PRT. It is created automatically when you create a new project using the PRT cookiecutter template.
 
-We're not going to get into much more detail on `environment.yml` files, but there's a short primer in [Conda's docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#create-env-file-manually) if you want to find out more.
+We're not going to get into much more detail on `environment.yaml` files, but there's a short primer in [Conda's docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#create-env-file-manually) if you want to find out more.
 
 #### How to build your environment
 
@@ -51,65 +51,95 @@ We're not going to get into much more detail on `environment.yml` files, but the
     If you have not already completed the preceding steps then return to [Create your project/repo](#create-your-projectrepo) and follow the steps back to here.
 
 !!! tip
-    A boilerplate `environment.yml` file is already located in the root of your new project directory. This contains a list of some of the common packages used in data projects at PRT. If you already
+    A boilerplate `environment.yaml` file is already located in the root of your new project directory. This contains a list of some of the common packages used in data projects at PRT. If you already
     know which packages you want to use in your project, or that certain packages will not be needed, then feel free to edit this file before you build your environment.
 
 So you've now created your PRT cookiecutter project and initialised it as a GitHub repo. The next step is to build your development environment.
 
 1. Open a terminal window in VS Code (Terminal > New Terminal)
 2. Check that the terminal prompt is showing your project's directory 
-```bash
-<my-repo-name> $ 
-```
+    ```bash
+    <my-repo-name> $ 
+    ```
 1. Activate `prtdata`
-```bash
-conda activate prtdata
-(prtdata)<my-repo-name> $ 
-```
-1. Build your project environment by entering the following command:
-```bash
-conda env create --prefix ./envs -f environment.yml
-```
+    ```bash
+    conda activate prtdata
+    (prtdata)<my-repo-name> $ 
+    ```
 
-This command reads the `environment.yml` file within your project directory and builds a new development environment called `./envs` within that directory. As Conda sets out in their docs:
+1. *Optional*: Customise your project environment.yaml file to include the libraries that you think you'll need (you can always update this later)
 
-!!! quote "[Specifying a location for an environment](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#specifying-a-location-for-an-environment)"
-    Specifying a path to a subdirectory of your project directory when creating an environment has the following benefits:
+5. Build your project environment
+    
+    !!! note
+        The conda export command has been significantly enhanced in conda 25.7.x with a new plugin-based architecture, multiple export formats, and improved functionality. The following commands will work are still backwards compatible with newer versions of conda, but best practices have been revised to omit the need for `env` to be explicitly included in commands. Check your version of conda by entering `conda --version` in your terminal and use the relevant commands
 
-    * It makes it easy to tell if your project uses an isolated environment by including the environment as a subdirectory.
-    * It makes your project more self-contained as everything, including the required software, is contained in a single project directory.
 
-Once all of the packages have been downloaded and your environment has been created it's time to activate your environment. 
+    === "Conda 25.7.x onwards"
 
-```bash
-conda activate ./envs
-```
-By doing this you avoid the cognitive load of having to think of a new name for your development environment every time you start a new project. As long as you navigate to your project folder and activate `./envs` you know you'll be working in that project's dedicated environment.
+        ```bash
+        conda create --prefix ./envs -f environment.yaml
+        ```
 
-One small downside is that the full filepath to the environment might take up a lot of visible space in your terminal prompt. For example:
+    === "Earlier versions"
+        ```bash
+        conda env create --prefix ./envs -f environment.yaml
+        ```
 
-```bash
-(/Users/USER_NAME/research/data-science/PROJECT_NAME/envs) $
-```
-Whilst the vast majority of your development will take place using VS Code, if this is bothering you, then run the following command and a shortened version will be set:
+    This command reads the `environment.yaml` file within your project directory and builds a new development environment called `./envs` within that directory. As Conda sets out in their docs:
 
-```bash
-`conda config --set env_prompt '({name})'`
-(envs) $
-```
+    !!! quote "[Specifying a location for an environment](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#specifying-a-location-for-an-environment)"
+        Specifying a path to a subdirectory of your project directory when creating an environment has the following benefits:
 
-1. Finally, export your environment to `environment.yml`
+        * It makes it easy to tell if your project uses an isolated environment by including the environment as a subdirectory.
+        * It makes your project more self-contained as everything, including the required software, is contained in a single project directory.
 
-This will allow you to rebuild your environment on another machine if you need to, and ensure that others who wish you run your code have the same development environment.
-```bash
-conda env export > environment.yml --no-builds
-```
+    Once all of the packages have been downloaded and your environment has been created it's time to activate your environment. 
 
-You may also wish to create a `requirements.txt` file to maximise compatibility. This helps users if they are using `pip` and `venv` rather than Conda.
+    ```bash
+    conda activate ./envs
+    ```
+    By doing this you avoid the cognitive load of having to think of a new name for your development environment every time you start a new project. As long as you navigate to your project folder and activate `./envs` you know you'll be working in that project's dedicated environment.
 
-```bash
-pip list --format=freeze > requirements.txt
-```
+    One small downside is that the full filepath to the environment might take up a lot of visible space in your terminal prompt. For example:
+
+    ```bash
+    (/Users/USER_NAME/research/data-science/PROJECT_NAME/envs) $
+    ```
+    Whilst the vast majority of your development will take place using VS Code, if this is bothering you, then run the following command and a shortened version will be set:
+
+    ```bash
+    `conda config --set env_prompt '({name})'`
+    (envs) $
+    ```
+
+6. Export your environment to `environment.yaml`
+
+    This will allow you to rebuild your environment on another machine if you need to, and ensure that others who wish you run your code have the same development environment.
+
+    === "Conda 25.7.x onwards"
+
+        ```bash
+        conda export --no-builds > environment.yaml
+        ```
+
+    === "Earlier versions"
+        ```bash
+        conda env export --no-builds > environment.yaml
+        ```
+
+    You may also wish to create a `requirements.txt` file to maximise compatibility. This helps users if they are using `pip` and `venv` rather than Conda.
+
+    === "Conda 25.7.x onwards"
+
+        ```bash
+        conda export --no-builds > requirements.txt
+        ```
+
+    === "Earlier versions"
+        ```bash
+        conda env export --no-builds > requirements.txt
+        ```
 
 Let the coding begin!
 
@@ -138,9 +168,9 @@ arrow                     1.3.0              pyhd8ed1ab_1    conda-forge
     where the `<path-to-environment>` ends in `<my-repo-name>/envs`. 
 
 ### Exploring what makes up your environment
-To see what's in your Conda environment, open up the `environment.yml` file. In it is a list of the packages that are installed in your project's virtual Conda environment.
+To see what's in your Conda environment, open up the `environment.yaml` file. In it is a list of the packages that are installed in your project's virtual Conda environment.
 
-You might notice that the output that was returned when you ran `conda list` in your Jupyter Notebook was quite a bit longer than the number of packages listed in the `environment.yml`. That's because there were other dependencies that had to be installed to make the packages in `environment.yml` run.
+You might notice that the output that was returned when you ran `conda list` in your Jupyter Notebook was quite a bit longer than the number of packages listed in the `environment.yaml`. That's because there were other dependencies that had to be installed to make the packages in `environment.yaml` run.
 
 
 
@@ -148,7 +178,7 @@ You might notice that the output that was returned when you ran `conda list` in 
 
 We like to think of these two files are representing two different perspectives:
 
-* **`environment.yml`**: The packages that you **want**. This file is manually maintained.
+* **`environment.yaml`**: The packages that you **want**. This file is manually maintained.
 * **`environment.<your-architecture>.lock.yml`**: The packages that you **need** (to run what you want). This file is autogenerated and updated.
 
 ## Default paths

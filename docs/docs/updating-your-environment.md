@@ -2,11 +2,11 @@
 
 We've already created a development environment and now you realise that there's a package that you need or forgot to install—let's customize it.
 
-## Always use the `environment.yml`!
+## Always use the `environment.yaml`!
 !!! warning
-    When adding packages to your python environment, **do not use `pip install` or `conda install` directly**. Always edit `environment.yml` and run `conda env update` instead. This will go a long way to avoiding the dreaded dependency hell.
+    When adding packages to your python environment, **do not use `pip install` or `conda install` directly**. Always edit `environment.yaml` and run `conda env update` instead. This will go a long way to avoiding the dreaded dependency hell.
 
-Your `environment.yml` file will look something like this:
+Your `environment.yaml` file will look something like this:
 ```yaml
 channels:
   - conda-forge
@@ -43,27 +43,27 @@ Once you've made your edits, run `conda env update` in the terminal and voila, y
 
 Whilst the packaging team from Anaconda, Inc. provides a multitude of packages on their defaults channel, not all packages are available there. This meant that users had to install packages from multiple channels, which could lead to dependency conflicts. Conda-forge was created to solve this problem by providing a single channel that contains a wide range of up-to-date packages.
 
-We recommend using conda-forge as your primary channel for packages. This is why it is listed first in the `channels` section of the `environment.yml` file.
+We recommend using conda-forge as your primary channel for packages. This is why it is listed first in the `channels` section of the `environment.yaml` file.
 
 ## Checking your updates back into the project repo
-To share your updated environment, check in your `environment.yml` file so others can use it. We'll follow the [EasyData git workflow](https://github.com/hackalog/easydata/blob/master/%7B%7B%20cookiecutter.repo_name%20%7D%7D/reference/easydata/git-workflow.md)
+To share your updated environment, check in your `environment.yaml` file so others can use it. We'll follow the [EasyData git workflow](https://github.com/hackalog/easydata/blob/master/%7B%7B%20cookiecutter.repo_name%20%7D%7D/reference/easydata/git-workflow.md)
 
 !!! note
     All of the steps below can be completed from within VS Code's Source Control (:octicons-git-branch-24:) panel if you prefer to avoid the command line.
 
 1. Checkout a new branch: `git checkout -b update-environment`
-2. Stage the changes: `git add -p environment.yml` and include the desired changes, discarding the rest
+2. Stage the changes: `git add -p environment.yaml` and include the desired changes, discarding the rest
 3. Commit the changes: `git commit -m "update the environment file"
 4. Push to your origin: `git push origin update-environment`
 5. [Create a pull request (PR) to the main branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
-6. Merge this PR: If you look at the PR, the only changes should be to the `environment.yml` file. If all looks well, merge this PR.
+6. Merge this PR: If you look at the PR, the only changes should be to the `environment.yaml` file. If all looks well, merge this PR.
 7. Incorporate changes back into your local setup: 
 ```bash
 git checkout main
 git fetch origin
 git merge origin/main
 ```
-The local `main` branch will now have the updated `environment.yml`. While it seems a bit roundabout here, we recommend always using GitHub PRs to keep track of changes. This allows for the adoption of a [multi-user workflow using an `upstream`](https://github.com/hackalog/easydata/wiki/GitHub-%28GitLab%29-Workflow-Cheat-Sheet) seamlessly.
+The local `main` branch will now have the updated `environment.yaml`. While it seems a bit roundabout here, we recommend always using GitHub PRs to keep track of changes. This allows for the adoption of a [multi-user workflow using an `upstream`](https://github.com/hackalog/easydata/wiki/GitHub-%28GitLab%29-Workflow-Cheat-Sheet) seamlessly.
 
 ## If all else fails
 
@@ -75,9 +75,9 @@ Ensure that the terminal path is in the root of your project directory, then run
 conda deactivate
 conda env remove --prefix ./envs
 ```
-Then rebuild it from the `environment.yml` file:
+Then rebuild it from the `environment.yaml` file:
 ```bash
 conda activate prtdata
-conda env create --prefix ./envs -f environment.yml
+conda env create --prefix ./envs -f environment.yaml
 ```
-This will delete the existing environment and create a new one from the `environment.yml` file.
+This will delete the existing environment and create a new one from the `environment.yaml` file.

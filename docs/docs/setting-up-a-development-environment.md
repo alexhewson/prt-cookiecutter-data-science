@@ -132,7 +132,7 @@ There are some other extensions itâ€™s useful to have and install (if they arenâ
 | Path Intellisense | Adds filename autocompletion |
 | Black Formatter | Adds formatting support for Python files using the [ Black ]( https://black.readthedocs.io/en/stable/index.html ) formatter. |
 | Rainbow CSV | Rainbow CSV - Highlights columns in comma (.csv) files and more |
-| YAML | Adds comprehensive YAML Language support (useful for environment.yml files) |
+| YAML | Adds comprehensive YAML Language support (useful for environment.yaml files) |
 | vscode-icons | Adds icons to VS code file explorer, making it easier to find the file you want |
 | Shebang Snippets | Insert "shebang" lines automatically |
 
