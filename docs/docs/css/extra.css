@@ -7,6 +7,7 @@ h1, h2, h3 {
     --md-primary-bg-color:        #f7f2f2;
     --md-default-fg-color:        #343436;
     --md-default-bg-color:          var(--md-primary-bg-color);
+    --md-accent-fg-color:         var(--md-default-fg-color);
     --md-code-bg-color:           hsla(200, 0%, 92%, 1);
     --md-typeset-color:             var(--md-default-fg-color);
     --md-typeset-a-color:           var(--md-primary-fg-color);
